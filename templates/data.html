@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Insert Naruto Character</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Insert Naruto Character</h1>
+</div>
+
+<h4>Add a new Naruto character</h4>
+<form action="/new-character" method="post">
+    <input type="text" name="first_name" placeholder="First Name">
+    <br>
+    <input type="text" name="last_name" placeholder="Last Name">
+    <br>
+    <input type="text" name="age" placeholder="Age">
+    <br>
+    <input type="text" name="rank" placeholder="Rank">
+    <br>
+    <input type="text" name="sex" placeholder="Sex">
+    <br>
+    <input type="text" name="affiliation" placeholder="Affiliation">
+    <br>
+    <input type="text" name="primary_chakra_nature" placeholder="Primary Chakra Nature">
+    <br>
+    <input type="text" name="secondary_chakra_nature" placeholder="Secondary Chakra Nature">
+    <br>
+    <input type="text" name="genjutsu" placeholder="Genjutsu">
+    <br>
+    <input type="text" name="ninjutsu" placeholder="Ninjutsu">
+    <br>
+    <input type="text" name="taijutsu" placeholder="Taijutsu">
+    <br>
+    <input type="submit" value="Create">
+</form>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home Page</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">List of Naruto Characters</h1>
+</div>
+
+<body>
+    <table>
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Rank</th>
+        <th>Sex</th>
+        <th>Affiliation</th>
+        <th>Primary Chakra Nature</th>
+        <th>Secondary Chakra Nature</th>
+        <th>Genjutsu</th>
+        <th>Ninjutsu</th>
+        <th>Taijutsu</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+        <td> {{ row[0] }}</td>
+        <td> {{ row[1] }}</td>
+        <td> {{ row[2] }}</td>
+        <td> {{ row[3] }}</td>
+        <td> {{ row[4] }}</td>
+        <td> {{ row[5] }}</td>
+        <td> {{ row[6] }}</td>
+        <td> {{ row[7] }}</td>
+        <td> {{ row[8] }}</td>
+        <td> {{ row[9] }}</td>
+        <td> {{ row[10] }}</td>
+        <td> {{ row[11] }}</td>
+        <td> {{ row[12] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</body>
+{% endblock %}

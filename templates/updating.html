@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home Page</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">List of Naruto Characters</h1>
+</div>
+
+<body>
+    <table>
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Rank</th>
+        <th>Sex</th>
+        <th>Affiliation</th>
+        <th>Primary Chakra Nature</th>
+        <th>Secondary Chakra Nature</th>
+        <th>Genjutsu</th>
+        <th>Ninjutsu</th>
+        <th>Taijutsu</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+        <td>
+            <form action="/update" method="post">
+                <label>{{ row[0] }}</label>
+                <input type="hidden" name="id" value="{{ row[0] }}">
+                <td>
+                <input type="text" name="first_name" size="10" value="{{ row[1] }}">
+                </td>
+                <td>
+                <input type="text" name="last_name" size="10" value="{{ row[2] }}">
+                </td>
+                <td>
+                <input type="text" name="age" size="1" value="{{ row[3] }}">
+                </td>
+                <td>
+                <input type="text" name="rank" size="7" value="{{ row[4] }}">
+                </td>
+                <td>
+                <input type="text" name="sex" size="4" value="{{ row[5] }}">
+                </td>
+                <td>
+                <input type="text" name="affiliation" size="15" value="{{ row[6] }}">
+                </td>
+                <td>
+                <input type="text" name="primary_chakra_nature" size="10" value="{{ row[7] }}">
+                </td>
+                <td>
+                <input type="text" name="secondary_chakra_nature" size="10" value="{{ row[8] }}">
+                </td>
+                <td>
+                <input type="text" name="genjutsu" size="5" value="{{ row[9] }}">
+                </td>
+                <td>
+                <input type="text" name="ninjutsu" size="5" value="{{ row[10] }}">
+                </td>
+                <td>
+                <input type="text" name="taijutsu" size="5" value="{{ row[11] }}">
+                </td>
+                <td>
+                <input type="submit" value="Update">
+                </td>
+            </form>
+        </td>
+        <td>
+            <form action="/delete" method="post">
+                <input type="hidden" name="id" value="{{ row[0] }}">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</body>
+{% endblock %}
